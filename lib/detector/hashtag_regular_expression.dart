@@ -46,3 +46,8 @@ final hashTagAtSignRegExp = RegExp(
   multiLine: true,
 );
 
+final atTagRegExp = RegExp(
+  "(?!\\n)(?:^|\\s)([@]([$hashTagContentLetters]+))",
+  multiLine: true,
+);
+

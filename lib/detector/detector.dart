@@ -118,9 +118,15 @@ class Detector {
           emojiMatch.start, emojiMatch.end, replacementText);
     });
 
-    final regExp = decorateAtSign! ? hashTagAtSignRegExp : hashTagRegExp;
+    final hashTags = hashTagRegExp.allMatches(copiedText).toList();
+    final atTags = atTagRegExp.allMatches(copiedText).toList();
 
-    final tags = regExp.allMatches(copiedText).toList();
+    // Combine the matches from hashtags and at-tags
+    final tags = List<RegExpMatch>.from(hashTags)..addAll(atTags);
+
+    // Sort the combined matches by their start index to maintain text order
+    tags.sort((a, b) => a.start.compareTo(b.start));
+
     if (tags.isEmpty) {
       return [];
     }
