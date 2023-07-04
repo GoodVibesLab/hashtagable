@@ -4,6 +4,8 @@ const _numbers = '0-9０-９';
 
 const _englishLetters = 'a-zA-Zａ-ｚＡ-Ｚ';
 
+const _frenchLetters = 'éèêëàâäôöùûüïîçÿÉÈÊËÀÂÄÔÖÙÛÜÏÎÇŸ';
+
 const _japaneseLetters = 'ぁ-んァ-ン一-龠';
 
 const _koreanLetters = '\u1100-\u11FF\uAC00-\uD7A3';
@@ -30,6 +32,7 @@ const hashTagContentLetters = _symbols +
     _thaiLetters +
     _norwegianLetters +
     _turkishLetters +
+    _frenchLetters +
     _germanLetters;
 
 /// Regular expression to extract hashtag from text
