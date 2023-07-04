@@ -1,10 +1,8 @@
-const _symbols = '·・ー';
+const _symbols = '·・ー_';
 
 const _numbers = '0-9０-９';
 
 const _englishLetters = 'a-zA-Zａ-ｚＡ-Ｚ';
-
-const _frenchLetters = 'éèêëàâäôöùûüïîçÿÉÈÊËÀÂÄÔÖÙÛÜÏÎÇŸ';
 
 const _japaneseLetters = 'ぁ-んァ-ン一-龠';
 
@@ -32,7 +30,6 @@ const hashTagContentLetters = _symbols +
     _thaiLetters +
     _norwegianLetters +
     _turkishLetters +
-    _frenchLetters +
     _germanLetters;
 
 /// Regular expression to extract hashtag from text
@@ -45,7 +42,7 @@ final hashTagRegExp = RegExp(
 
 /// Regular expression when you select decorateAtSign
 final hashTagAtSignRegExp = RegExp(
-  "(?!\\n)(?:^|\\s)([#@]([\\w-]+))",
+  "(?!\\n)(?:^|\\s)(@([$hashTagContentLetters]+))",
   multiLine: true,
 );
 
