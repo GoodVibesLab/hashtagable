@@ -105,9 +105,9 @@ class Detector {
         fullWidthRegExp.allMatches(copiedText).toList();
     final tokenRegExp =
         RegExp(r'[・ぁ-んーァ-ヶ一-龥\u1100-\u11FF\uAC00-\uD7A3０-９ａ-ｚＡ-Ｚ　]');
-    final emojiMatches = fullWidthRegExpMatches
+    final List<RegExpMatch> emojiMatches = fullWidthRegExpMatches
         .where((match) => (!tokenRegExp
-            .hasMatch(copiedText.substring(match.start, match.end))))
+        .hasMatch(copiedText.substring(match.start, match.end))))
         .toList();
 
     /// This is to avoid the error caused by 'regExp' which counts the emoji's length 1.
