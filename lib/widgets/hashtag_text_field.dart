@@ -1197,7 +1197,7 @@ class _HashTagTextFieldState extends State<HashTagTextField>
         TextSelectionTheme.of(context);
     final TextStyle style = theme.textTheme.subtitle1!.merge(widget.basicStyle);
     final Brightness keyboardAppearance =
-        widget.keyboardAppearance ?? theme.primaryColorBrightness;
+        widget.keyboardAppearance ?? theme.colorScheme.brightness;
     final TextEditingController controller = _effectiveController;
     final FocusNode focusNode = _effectiveFocusNode;
     final List<TextInputFormatter> formatters = <TextInputFormatter>[
