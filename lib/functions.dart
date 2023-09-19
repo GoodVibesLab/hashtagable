@@ -51,7 +51,11 @@ TextSpan getHashTagTextSpan({
           decorateAtSign: decorateAtSign)
       .getDetections(source);
   if (decorations.isEmpty) {
-    return TextSpan(text: source, style: basicStyle);
+    final recognizer = TapGestureRecognizer()
+      ..onTap = () {
+          onUnTaggedTap!(source);
+      };
+    return TextSpan(text: source, style: basicStyle, recognizer: recognizer);
   } else {
     decorations.sort();
     final span = decorations
