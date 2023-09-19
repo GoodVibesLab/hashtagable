@@ -13,6 +13,7 @@ class HashTagText extends StatelessWidget {
       required this.decoratedStyle,
       this.decorateAtSign = false,
       this.onTap,
+      this.onUnTaggedTap,
       this.textAlign = TextAlign.start,
       this.textDirection,
       this.softWrap = true,
@@ -28,6 +29,7 @@ class HashTagText extends StatelessWidget {
   final TextStyle basicStyle;
   final TextStyle decoratedStyle;
   final Function(String)? onTap;
+  final Function(String)? onUnTaggedTap;
   final TextAlign textAlign;
   final TextDirection? textDirection;
   final bool softWrap;
@@ -48,6 +50,7 @@ class HashTagText extends StatelessWidget {
           decorateAtSign: decorateAtSign,
           basicStyle: basicStyle,
           onTap: onTap,
+          onUnTaggedTap: onUnTaggedTap,
           source: text),
       textAlign: textAlign,
       textDirection: textDirection,
